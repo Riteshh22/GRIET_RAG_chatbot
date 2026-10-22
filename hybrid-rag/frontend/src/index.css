@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply bg-neutral-50 text-neutral-900;
+  line-height: 1.6;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 rounded-[4px] border-2 border-transparent bg-clip-content;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-400;
+}
+
+::selection {
+  @apply bg-primary-100 text-primary-600;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-neutral-100 text-neutral-700 hover:bg-neutral-200 focus:ring-neutral-400 border border-neutral-200;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-neutral-600 hover:bg-neutral-100 focus:ring-neutral-400;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-50 text-red-600 hover:bg-red-100 focus:ring-red-400;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl border border-neutral-200 shadow-[0_2px_8px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.08),0_2px_6px_rgba(0,0,0,0.05)] transition-shadow duration-200;
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900 transition-colors duration-150;
+  }
+
+  .sidebar-item-active {
+    @apply bg-primary-50 text-primary-600 font-semibold;
+  }
+
+  .message-bubble {
+    @apply max-w-[85%] px-5 py-3.5 rounded-2xl;
+  }
+
+  .message-user {
+    @apply message-bubble bg-primary-500 text-white rounded-br-md;
+  }
+
+  .message-assistant {
+    @apply message-bubble bg-white text-neutral-900 border border-neutral-200 shadow-[0_1px_3px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)] rounded-bl-md;
+  }
+
+  .source-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-colors;
+  }
+
+  .source-badge-griet {
+    @apply source-badge bg-primary-50 text-primary-600 border border-primary-200;
+  }
+
+  .source-badge-web {
+    @apply source-badge bg-amber-50 text-amber-700 border border-amber-200;
+  }
+
+  .source-card {
+    @apply p-4 rounded-xl border border-neutral-200 bg-white hover:border-primary-200 hover:shadow-[0_1px_3px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.03)] transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-in {
+    animation: fadeIn 0.3s ease-out, slideUp 0.3s ease-out;
+  }
+}
+
+.prose {
+  @apply text-neutral-700;
+}
+
+.prose p {
+  @apply mb-3 leading-relaxed;
+}
+
+.prose p:last-child {
+  @apply mb-0;
+}
+
+.prose strong {
+  @apply font-semibold text-neutral-900;
+}
+
+.prose code {
+  @apply bg-neutral-100 px-1.5 py-0.5 rounded text-sm font-mono text-primary-600;
+}
+
+.prose pre {
+  @apply bg-neutral-900 rounded-xl p-4 overflow-x-auto mb-4;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-neutral-100;
+}
+
+.prose ul {
+  @apply list-disc list-inside mb-3 space-y-1;
+}
+
+.prose ol {
+  @apply list-decimal list-inside mb-3 space-y-1;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary-500 pl-4 italic text-neutral-600 my-4;
+}
+
+.prose h1 {
+  @apply text-2xl font-bold text-neutral-900 mb-3 mt-6;
+}
+
+.prose h2 {
+  @apply text-xl font-bold text-neutral-900 mb-2 mt-6;
+}
+
+.prose h3 {
+  @apply text-lg font-semibold text-neutral-900 mb-2 mt-4;
+}
+
+.prose a {
+  @apply text-primary-500 hover:underline;
+}
+
+.prose hr {
+  @apply border-neutral-200 my-6;
+}
