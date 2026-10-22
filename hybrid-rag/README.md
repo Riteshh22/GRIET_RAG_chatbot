@@ -204,6 +204,3 @@ The application will be available at:
 - [ ] Multi-language support
 - [ ] Admin panel with usage analytics
 
-## License
-
-MIT License
