@@ -1,5 +1,0 @@
-streamlit
-beautifulsoup4
-requests
-nltk
-python-dotenv
